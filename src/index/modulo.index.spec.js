@@ -53,5 +53,15 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto3)
     expect(eliminarProyecto(nuevoProyecto4,proyectos)).toEqual("No se puede eliminar un proyecto que no existe en proyectos")
   });
+  it("Deberiamos ver el mensaje Se elimino su proyecto con exito cuando el proyecto existia en proyectos", () => {
+    let nuevoProyecto1 = new Proyecto("t1", "d2");
+    let nuevoProyecto2 = new Proyecto("t2", "d2");
+    let nuevoProyecto3 = new Proyecto("t3", "d3");
+    let proyectos=[]
+    proyectos.push(nuevoProyecto1)
+    proyectos.push(nuevoProyecto2)
+    proyectos.push(nuevoProyecto3)
+    expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
+  });
 
 });

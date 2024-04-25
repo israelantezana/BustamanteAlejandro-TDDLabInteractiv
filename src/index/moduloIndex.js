@@ -47,6 +47,11 @@ function eliminarProyecto(proyecto,proyectos)
     if (indiceProyectoAEliminar == NOEXISTE) {
         return "No se puede eliminar un proyecto que no existe en proyectos"
     }
+    else
+    {
+        proyectos.splice(indiceProyectoAEliminar, 1);
+        return "Se elimino su proyecto con exito"
+    }
 }
 
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
