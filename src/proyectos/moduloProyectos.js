@@ -1,5 +1,6 @@
 function datosFormulariosSonValidos(titulo, descripcion) {
-  if (titulo == "" && descripcion == "") {
+  const STRINGVACIO = "";
+  if (titulo == STRINGVACIO && descripcion == STRINGVACIO) {
     return false;
   }
 }
