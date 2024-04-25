@@ -29,4 +29,7 @@ describe("crearProyecto", () => {
     expect(proyectoNuevo.descripcion).toBe(descripcion);
     
   });
+  it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno", () => {
+    expect(mostrarProyectos([])).toEqual("No tiene ningun proyecto creado")
+  });
 });

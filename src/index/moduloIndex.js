@@ -20,4 +20,10 @@ function agregarProyectoAProyectos(proyecto, proyectos) {
   }
 }
 
-export { crearProyecto, agregarProyectoAProyectos };
+function mostrarProyectos(proyectos) {
+    if (proyectos.length === 0) {
+        return "No tiene ningun proyecto creado";
+    } 
+}
+
+export { crearProyecto,agregarProyectoAProyectos,mostrarProyectos};
