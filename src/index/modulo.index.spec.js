@@ -1,4 +1,5 @@
 import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos} from "./moduloIndex.js"
+import Proyecto from "../Proyecto.js";
 
 describe("crearProyecto", () => {
   it("Si se quiere crear un proyecto sin titulo deberia obtener un null en crear proyecto", () => {
@@ -6,5 +7,13 @@ describe("crearProyecto", () => {
   });
   it("Si se quiere crear un proyecto sin descripcion deberia obtener un null en crear proyecto", () => {
     expect(crearProyecto("titulo",null)).toEqual(null)
+  });
+  it("Si se capturaron bien todos los datos para crear el proyecto, debería crear un nuevo objeto Proyecto", () => {
+    const titulo = "Título del proyecto";
+    const descripcion = "Descripción del proyecto";
+    const proyecto = crearProyecto(titulo, descripcion);
+    expect(proyecto).toBeInstanceOf(Proyecto);
+    expect(proyecto.titulo).toBe(titulo);
+    expect(proyecto.descripcion).toBe(descripcion);
   });
 });
