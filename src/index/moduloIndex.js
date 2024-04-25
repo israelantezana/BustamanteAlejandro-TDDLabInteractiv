@@ -24,6 +24,18 @@ function mostrarProyectos(proyectos) {
   if (proyectos.length === 0) {
     return "No tiene ningun proyecto creado";
   }
+  else{
+    let proyectosString=""
+    for (let i=0;i<proyectos.length;i++)
+    {
+        proyectosString=proyectosString+"Titulo:"+proyectos[i].titulo+"Descripcion:"+proyectos[i].descripcion;
+        if (i<proyectos.length-1)
+        {
+            proyectosString=proyectosString+","
+        }
+    }
+    return proyectosString
+}
 }
 
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos };

@@ -32,4 +32,14 @@ describe("crearProyecto", () => {
   it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno", () => {
     expect(mostrarProyectos([])).toEqual("No tiene ningun proyecto creado")
   });
+  it("Deberiamos ver los nombres y descripciones de todos nuestros proyectos si efectivamente se tienen proyectos", () => {
+    let nuevoProyecto1 = new Proyecto("t1", "d2");
+    let nuevoProyecto2 = new Proyecto("t2", "d2");
+    let nuevoProyecto3 = new Proyecto("t3", "d3");
+    let proyectos=[]
+    proyectos.push(nuevoProyecto1)
+    proyectos.push(nuevoProyecto2)
+    proyectos.push(nuevoProyecto3)
+    expect(mostrarProyectos(proyectos)).toEqual("Titulo:t1Descripcion:d2,Titulo:t2Descripcion:d2,Titulo:t3Descripcion:d3")
+  });
 });
