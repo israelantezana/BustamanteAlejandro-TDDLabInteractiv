@@ -43,7 +43,8 @@ function mostrarProyectos(proyectos) {
 function eliminarProyecto(proyecto,proyectos)
 {
     const indiceProyectoAEliminar = proyectos.indexOf(proyecto);
-    if (indiceProyectoAEliminar == -1) {
+    const NOEXISTE=-1
+    if (indiceProyectoAEliminar == NOEXISTE) {
         return "No se puede eliminar un proyecto que no existe en proyectos"
     }
 }
