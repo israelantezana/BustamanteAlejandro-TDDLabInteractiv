@@ -5,11 +5,10 @@ function crearProyecto(titulo, descripcion) {
     return null;
   } else if (descripcion == null) {
     return null;
-  }
-  else{
+  } else {
     let nuevoProyecto = new Proyecto(titulo, descripcion);
-    return nuevoProyecto
-}
+    return nuevoProyecto;
+  }
 }
 
 export { crearProyecto };
