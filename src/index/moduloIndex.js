@@ -11,4 +11,14 @@ function crearProyecto(titulo, descripcion) {
   }
 }
 
-export { crearProyecto };
+function agregarProyectoAProyectos(proyecto,proyectos)
+{
+    if(proyecto==null)
+    {
+        return "No se puede agregar a proyectos algo no existente"
+    }
+
+    
+}
+
+export { crearProyecto ,agregarProyectoAProyectos};
