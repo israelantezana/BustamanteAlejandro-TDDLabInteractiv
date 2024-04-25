@@ -21,9 +21,9 @@ function agregarProyectoAProyectos(proyecto, proyectos) {
 }
 
 function mostrarProyectos(proyectos) {
-    if (proyectos.length === 0) {
-        return "No tiene ningun proyecto creado";
-    } 
+  if (proyectos.length === 0) {
+    return "No tiene ningun proyecto creado";
+  }
 }
 
-export { crearProyecto,agregarProyectoAProyectos,mostrarProyectos};
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos };
