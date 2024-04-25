@@ -19,4 +19,14 @@ describe("crearProyecto", () => {
   it("Si el proyecto que se trata de agregar a los proyectos es null deberia ver el mensaje: No se puede agregar a proyectos algo no existente", () => {
     expect(agregarProyectoAProyectos(null)).toEqual("No se puede agregar a proyectos algo no existente")
   });
+  it("Si el proyecto que se trata de agregar a los proyectos no es null deberia obtener la instancia a ese mismo Proyecto", () => {
+    let proyectos=[]
+    const titulo = "Título del proyecto";
+    const descripcion = "Descripción del proyecto";
+    const proyectoNuevo=agregarProyectoAProyectos(new Proyecto(titulo,descripcion),proyectos)
+    expect(proyectoNuevo).toBeInstanceOf(Proyecto);
+    expect(proyectoNuevo.titulo).toBe(titulo);
+    expect(proyectoNuevo.descripcion).toBe(descripcion);
+    
+  });
 });
