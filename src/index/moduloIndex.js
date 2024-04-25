@@ -40,18 +40,15 @@ function mostrarProyectos(proyectos) {
   }
 }
 
-function eliminarProyecto(proyecto,proyectos)
-{
-    const indiceProyectoAEliminar = proyectos.indexOf(proyecto);
-    const NOEXISTE=-1
-    if (indiceProyectoAEliminar == NOEXISTE) {
-        return "No se puede eliminar un proyecto que no existe en proyectos"
-    }
-    else
-    {
-        proyectos.splice(indiceProyectoAEliminar, 1);
-        return "Se elimino su proyecto con exito"
-    }
+function eliminarProyecto(proyecto, proyectos) {
+  const indiceProyectoAEliminar = proyectos.indexOf(proyecto);
+  const NOEXISTE = -1;
+  if (indiceProyectoAEliminar == NOEXISTE) {
+    return "No se puede eliminar un proyecto que no existe en proyectos";
+  } else {
+    proyectos.splice(indiceProyectoAEliminar, 1);
+    return "Se elimino su proyecto con exito";
+  }
 }
 
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
