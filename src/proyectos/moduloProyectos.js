@@ -6,6 +6,8 @@ function datosFormulariosSonValidos(titulo, descripcion) {
     return false;
   } else if (descripcion == STRINGVACIO) {
     return false;
+  } else {
+    return true;
   }
 }
 export default datosFormulariosSonValidos;

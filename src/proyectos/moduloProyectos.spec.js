@@ -10,4 +10,7 @@ describe("formularioProyectos", () => {
   it("Deberia retornar false si no se lleno el campo de descripcion", () => {
     expect(datosFormulariosSonValidos("titulo1","")).toEqual(false);
   });
+  it("Deberia retornar true si se llenaron todos los campos", () => {
+    expect(datosFormulariosSonValidos("titulo","descripcion")).toEqual(true);
+  });
 });
