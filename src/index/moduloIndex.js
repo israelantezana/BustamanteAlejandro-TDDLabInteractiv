@@ -1,8 +1,7 @@
 function crearProyecto(titulo, descripcion) {
-    if (titulo==null)
-    {
-        return null
-    }
+  if (titulo == null) {
+    return null;
+  }
 }
 
-export {crearProyecto}
+export { crearProyecto };
