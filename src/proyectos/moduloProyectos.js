@@ -10,4 +10,5 @@ function datosFormulariosSonValidos(titulo, descripcion) {
     return true;
   }
 }
+
 export default datosFormulariosSonValidos;
