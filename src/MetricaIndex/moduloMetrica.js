@@ -2,16 +2,19 @@ import Metrica from "../Metrica.js";
 
 function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
     const cero = 0;
-    if (pruebasAñadidas === null || pruebasAñadidas === undefined || pruebasAñadidas < cero) {
+    const valorindefinido = undefined;
+    const valornulo = null;
+    const valorTope = 100;
+    if (pruebasAñadidas === valornulo || pruebasAñadidas === valorindefinido || pruebasAñadidas < cero) {
       pruebasAñadidas = cero; 
     }
-    if (lineasDeCodigo === null || lineasDeCodigo === undefined || lineasDeCodigo < cero) {
+    if (lineasDeCodigo === valornulo || lineasDeCodigo === valorindefinido || lineasDeCodigo < cero) {
       lineasDeCodigo = cero; 
     }
-    if (cobertura === null || cobertura === undefined || cobertura < cero) {
+    if (cobertura === valornulo || cobertura === valorindefinido || cobertura < cero) {
       cobertura = cero; 
     } 
-    if (pruebasAñadidas > 100 || lineasDeCodigo > 100 || cobertura > 100) {
+    if (pruebasAñadidas > valorTope || lineasDeCodigo > valorTope || cobertura > valorTope) {
         console.log("Ponga un valor real porfavor");
         return null;
       }
