@@ -1,7 +1,13 @@
+import puntajePorCobertura from "./puntaje/moduloPuntCobertura";
+
 export default class Puntaje {
     constructor() {
-        this.puntajePruebas = [];
-        this.puntajeLineasCodigo = [];
-        this.puntajeCobertura = [];
+        this.puntajePruebas = [0];
+        this.puntajeLineasCodigo = [0];
+        this.puntajeCobertura = [0];
+    }
+
+    getPuntajeCobertura(numeroCommit) {
+        return this.puntajeCobertura[0];
     }
 }
