@@ -23,8 +23,12 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
   }
 
   function agregarMetricaAProyecto(metrica, proyecto) {
+    if (!proyecto || !Array.isArray(proyecto.metricas)) {
+        return "No se puede agregar una métrica a un proyecto no existente";
+      } else {
       proyecto.metricas.push(metrica);
       return proyecto.metricas[proyecto.metricas.length - 1];
+      }
     }
   
 export { crearMetrica, agregarMetricaAProyecto   };

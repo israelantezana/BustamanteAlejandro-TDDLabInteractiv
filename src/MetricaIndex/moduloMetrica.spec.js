@@ -46,4 +46,10 @@ describe("agregarMetricaAProyecto", () => {
       expect(proyecto.metricas.length).toBe(1);
       expect(ultimaMetricaAgregada).toBe(metrica);
     });
+    it("Debería retornar un mensaje si se intenta agregar una métrica a un proyecto no existente", () => {
+        const proyecto = null; 
+        const metrica = new Metrica(10, 100, 80);
+        const mensaje = agregarMetricaAProyecto(metrica, proyecto);
+        expect(mensaje).toBe("No se puede agregar una métrica a un proyecto no existente");
+      });
   });
