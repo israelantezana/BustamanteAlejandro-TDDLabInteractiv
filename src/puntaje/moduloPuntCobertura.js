@@ -1,0 +1,1 @@
+import Puntaje from "../Puntaje";
