@@ -30,5 +30,8 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
       return proyecto.metricas[proyecto.metricas.length - 1];
       }
     }
+
+   
+        
   
-export { crearMetrica, agregarMetricaAProyecto   };
+export { crearMetrica, agregarMetricaAProyecto };
