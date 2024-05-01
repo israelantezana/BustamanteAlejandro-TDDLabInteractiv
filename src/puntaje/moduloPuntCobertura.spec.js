@@ -7,4 +7,7 @@ describe("calcularPuntajePorCobertura", () => {
   it("Debería otorgar un puntaje de 0 cuando la cobertura de codigo fue del 0%", () => {
     expect(puntajePorCobertura(0)).toEqual(0);
   });
+  it("Debería otorgar un puntaje de 100 cuando la cobertura de codigo fue del 100%", () => {
+    expect(puntajePorCobertura(100)).toEqual(100);
+  });
 });
