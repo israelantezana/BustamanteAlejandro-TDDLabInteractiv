@@ -54,20 +54,19 @@ describe("agregarMetricaAProyecto", () => {
       });
   });
 
-  describe("eliminarMetricaDeProyecto", () => {
-    it("Debería eliminar la métrica del proyecto y retornar un mensaje de éxito", () => {
-      const proyecto = new Proyecto(); 
-      const metrica = new Metrica(10, 100, 80);
-      proyecto.metricas.push(metrica);
-      const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
-      expect(proyecto.metricas.length).toBe(0);
-      expect(mensaje).toBe("Se eliminó la métrica del proyecto con éxito");
-    });
-    it("Debería retornar un mensaje si se intenta eliminar una métrica que no existe en el proyecto", () => {
-        const proyecto = new Proyecto(); 
-        const metrica = new Metrica(10, 100, 80);
-        const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
-        expect(mensaje).toBe("No se puede eliminar una métrica que no existe en el proyecto");
-      });
-    
-  });   
+ describe("eliminarMetricaDeProyecto", () => {
+  it("Debería eliminar la métrica del proyecto y retornar un mensaje de éxito (no refac)", () => {
+    const proyecto = new Proyecto(); 
+    const metrica = new Metrica(10, 100, 80);
+    proyecto.metricas.push(metrica);
+    const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
+    expect(proyecto.metricas.length).toBe(0);
+    expect(mensaje).toBe("Se eliminó la métrica del proyecto con éxito");
+  });
+  it("Debería retornar un mensaje si se intenta eliminar una métrica que no existe en el proyecto", () => {
+    const proyecto = new Proyecto(); 
+    const metrica = new Metrica(10, 100, 80);
+    const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
+    expect(mensaje).toBe("No se puede eliminar una métrica que no existe en el proyecto");
+  });
+});   

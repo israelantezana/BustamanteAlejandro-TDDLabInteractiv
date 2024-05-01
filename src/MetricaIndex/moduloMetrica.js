@@ -44,6 +44,5 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
           }
         }
       }
-        
   
 export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto };
