@@ -31,7 +31,11 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
       }
     }
 
-   
+    function eliminarMetricaDeProyecto(metrica, proyecto) {
+        const indiceMetricaAEliminar = proyecto.metricas.indexOf(metrica);
+        proyecto.metricas.splice(indiceMetricaAEliminar, 1);
+        return "Se eliminó la métrica del proyecto con éxito";
+    }
         
   
-export { crearMetrica, agregarMetricaAProyecto };
+export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto };

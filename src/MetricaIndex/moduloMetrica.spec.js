@@ -54,4 +54,13 @@ describe("agregarMetricaAProyecto", () => {
       });
   });
 
-  
+  describe("eliminarMetricaDeProyecto", () => {
+    it("Debería eliminar la métrica del proyecto y retornar un mensaje de éxito", () => {
+      const proyecto = new Proyecto(); 
+      const metrica = new Metrica(10, 100, 80);
+      proyecto.metricas.push(metrica);
+      const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
+      expect(proyecto.metricas.length).toBe(0);
+      expect(mensaje).toBe("Se eliminó la métrica del proyecto con éxito");
+    });
+  });   
