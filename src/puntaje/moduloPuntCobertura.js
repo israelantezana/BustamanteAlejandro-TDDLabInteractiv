@@ -1,13 +1,9 @@
 import Puntaje from "../Puntaje";
+import { crearMetrica } from "../MetricaIndex/moduloMetrica";
 
 function puntajePorCobertura(porcetajeCubierto) {
-    let puntaje = new Puntaje();
-    if (porcetajeCubierto == 0) {
-        return puntaje.getPuntajeCobertura(1);
-    }
-    else {
-        return 100;
-    }
+    let puntaje= new Puntaje(0, 0, porcetajeCubierto);
+    return puntaje.getPuntajeCobertura();
 }
 
 export default puntajePorCobertura;
