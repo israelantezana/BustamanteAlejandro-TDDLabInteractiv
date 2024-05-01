@@ -39,8 +39,7 @@ describe("crearMetrica", () => {
 });
 
 describe("agregarMetricaAProyecto", () => {
-
-    it("Debería agregar la métrica al proyecto y retornar la última métrica agregada", () => {
+    it("Debería agregar la métrica al proyecto y retornar la última métrica agregada (no refac)", () => {
       const proyecto = new Proyecto(); 
       const metrica = new Metrica(10, 100, 80);
       const ultimaMetricaAgregada = agregarMetricaAProyecto(metrica, proyecto);
