@@ -63,7 +63,7 @@ describe("agregarMetricaAProyecto", () => {
     expect(proyecto.metricas.length).toBe(0);
     expect(mensaje).toBe("Se eliminó la métrica del proyecto con éxito");
   });
-  it("Debería retornar un mensaje si se intenta eliminar una métrica que no existe en el proyecto", () => {
+  it("Debería retornar un mensaje si se intenta eliminar una métrica que no existe en el proyecto (no refac)", () => {
     const proyecto = new Proyecto(); 
     const metrica = new Metrica(10, 100, 80);
     const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
