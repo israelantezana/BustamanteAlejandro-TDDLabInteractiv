@@ -1,14 +1,15 @@
 import Metrica from "../Metrica.js";
 
 function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
+    const cero = 0;
     if (pruebasAñadidas === null || pruebasAñadidas === undefined) {
-      pruebasAñadidas = 0; 
+      pruebasAñadidas = cero; 
     }
     if (lineasDeCodigo === null || lineasDeCodigo === undefined) {
-      lineasDeCodigo = 0; 
+      lineasDeCodigo = cero; 
     }
     if (cobertura === null || cobertura === undefined) {
-      cobertura = 0; 
+      cobertura = cero; 
     } 
     return new Metrica(pruebasAñadidas, lineasDeCodigo, cobertura);
   }
