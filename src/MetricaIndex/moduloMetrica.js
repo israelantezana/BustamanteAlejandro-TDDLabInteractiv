@@ -32,10 +32,18 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
     }
 
     function eliminarMetricaDeProyecto(metrica, proyecto) {
-        const indiceMetricaAEliminar = proyecto.metricas.indexOf(metrica);
-        proyecto.metricas.splice(indiceMetricaAEliminar, 1);
-        return "Se eliminó la métrica del proyecto con éxito";
-    }
+        if (!proyecto || !Array.isArray(proyecto.metricas)) {
+          return "No se puede eliminar una métrica que no existe en el proyecto";
+        } else {
+          const indiceMetricaAEliminar = proyecto.metricas.indexOf(metrica);
+          if (indiceMetricaAEliminar === -1) {
+            return "No se puede eliminar una métrica que no existe en el proyecto";
+          } else {
+            proyecto.metricas.splice(indiceMetricaAEliminar, 1);
+            return "Se eliminó la métrica del proyecto con éxito";
+          }
+        }
+      }
         
   
 export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto };
