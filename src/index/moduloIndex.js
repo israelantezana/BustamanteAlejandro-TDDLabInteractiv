@@ -65,6 +65,7 @@ function buscarPorNombre(nombre, proyectos){
         return proyectos[iteradorDeProyectos]
       }
     }
+    return "El proyecto TDD no existe"
 }
 
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto ,buscarPorNombre};
