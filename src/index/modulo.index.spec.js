@@ -67,5 +67,11 @@ describe("crearProyecto", () => {
     let proyectos=[]
     expect(BuscarProyecto(proyectos, "")).toEqual("")
   });
+  it("para bsucar un proyecto, deberiamos ver el encontrado", () => {
+    let proyectos=[]
+    let nuevoProyecto3 = new Proyecto("t3", "d3");
+    proyectos.push(nuevoProyecto3)
+    expect(BuscarProyecto(proyectos, "t3")).toEqual("Titulo:t1Descripcion:d2,Titulo:t2Descripcion:d2,Titulo:t3Descripcion:d3")
+  });
 
 });
