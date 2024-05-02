@@ -1,4 +1,4 @@
-import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto} from "./moduloIndex.js"
+import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto, BuscarProyecto} from "./moduloIndex.js"
 import Proyecto from "../Proyecto.js";
 
 describe("crearProyecto", () => {
@@ -62,6 +62,10 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto2)
     proyectos.push(nuevoProyecto3)
     expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
+  });
+  it("para bsucar un proyecto, deberiamos ver nada cuando no se ponga nada", () => {
+    let proyectos=[]
+    expect(BuscarProyecto(proyectos, "")).toEqual("")
   });
 
 });

@@ -40,6 +40,20 @@ function mostrarProyectos(proyectos) {
   }
 }
 
+function BuscarProyecto(proyectos, titulo) {
+  let proyectobuscado = "";
+    for (let i = 0; i < proyectos.length; i++) {
+      if ( proyectos[i].titulo === titulo) {
+        proyectobuscado = 
+        "Titulo:" +
+        proyectos[i].titulo +
+        "Descripcion:" +
+        proyectos[i].descripcion;;
+      }
+    }
+    return proyectobuscado;
+  }
+
 function eliminarProyecto(proyecto, proyectos) {
   const indiceProyectoAEliminar = proyectos.indexOf(proyecto);
   const NOEXISTE = -1;
@@ -51,4 +65,4 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto, BuscarProyecto};
