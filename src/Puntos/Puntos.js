@@ -12,4 +12,15 @@ function CalcularPuntosPorPruebas(pruebasAñadidas) {
   return puntos
 }
 
-export {CalcularPuntosPorPruebas};
+function CalcularPuntosPorLineas(LineasAñadidas) {
+  let puntos = 0;
+  if (LineasAñadidas >= 5  && LineasAñadidas <= 10) {
+     puntos = 3;
+  }
+  if (LineasAñadidas <= 4 || LineasAñadidas >= 11 ) {
+    puntos = 1;
+ }
+  return puntos;
+}
+
+export {CalcularPuntosPorPruebas, CalcularPuntosPorLineas};

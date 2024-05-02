@@ -1,4 +1,4 @@
-import { CalcularPuntosPorPruebas} from "./Puntos.js";
+import { CalcularPuntosPorPruebas ,CalcularPuntosPorLineas} from "./Puntos.js";
 
 
 describe("Calcular Puntos", () => {
@@ -11,4 +11,10 @@ describe("Calcular Puntos", () => {
   it("Debería obtener 0 puntos si las pruebas son mas de 3 o 0", () => {
     expect(CalcularPuntosPorPruebas(0)).toBe(0);
   });
+  it("Debería obtener 3 puntos si las lineas de codigo son entre 5 y 10", () => {
+    expect(CalcularPuntosPorLineas(6)).toBe(3);
+  });
+  
 });
+
+
