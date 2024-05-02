@@ -44,5 +44,12 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
           }
         }
       }
-  
-export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto };
+
+      function modificarMetrica(metrica, nuevasPruebasAñadidas, nuevasLineasDeCodigo, nuevaCobertura) {
+        metrica.pruebasAñadidas = nuevasPruebasAñadidas;
+        metrica.lineasDeCodigo = nuevasLineasDeCodigo;
+        metrica.cobertura = nuevaCobertura;
+        return metrica;
+      }
+      
+export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto,modificarMetrica };

@@ -1,4 +1,4 @@
-import { crearMetrica,agregarMetricaAProyecto , eliminarMetricaDeProyecto} from "./moduloMetrica.js";
+import { crearMetrica,agregarMetricaAProyecto , eliminarMetricaDeProyecto, modificarMetrica} from "./moduloMetrica.js";
 import Metrica from "../Metrica.js"; 
 import Proyecto from "../Proyecto.js"; 
 
@@ -68,5 +68,14 @@ describe("agregarMetricaAProyecto", () => {
     const metrica = new Metrica(10, 100, 80);
     const mensaje = eliminarMetricaDeProyecto(metrica, proyecto);
     expect(mensaje).toBe("No se puede eliminar una métrica que no existe en el proyecto");
+  });
+  describe("modificarMetrica", () => {
+    it("Debería modificar los valores de la métrica según los nuevos datos proporcionados", () => {
+      const metrica = new Metrica(10, 100, 80);
+      modificarMetrica(metrica, 15, 150, 90);
+      expect(metrica.pruebasAñadidas).toBe(15);
+      expect(metrica.lineasDeCodigo).toBe(150);
+      expect(metrica.cobertura).toBe(90);
+    });
   });
 });   
