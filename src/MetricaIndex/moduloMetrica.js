@@ -44,5 +44,24 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
           }
         }
       }
-  
-export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto };
+
+
+      
+      function mostrarMetricasProyecto(proyecto) {
+        const metricasContainer = document.querySelector(`#${proyecto.titulo}-metricas`);
+        metricasContainer.innerHTML = ""; // Limpiar el contenedor antes de mostrar las métricas
+    
+        proyecto.metricas.forEach((metrica, index) => {
+            const metricaElement = document.createElement("div");
+            metricaElement.innerHTML = `
+                <p>Métrica ${index + 1}:</p>
+                <p>Pruebas añadidas: ${metrica.pruebasAñadidas}</p>
+                <p>Líneas de código: ${metrica.lineasDeCodigo}</p>
+                <p>Cobertura: ${metrica.cobertura}%</p>
+            `;
+            metricasContainer.appendChild(metricaElement);
+        });
+    }
+    
+    
+    export { crearMetrica, agregarMetricaAProyecto, eliminarMetricaDeProyecto, mostrarMetricasProyecto };
