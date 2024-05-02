@@ -57,6 +57,13 @@ function buscarPorNombre(nombre, proyectos){
     {
       return "Porfavor ingrese un nombre para la busqueda"
     }
+    for (let i=0; i<proyectos.length;i++)
+    {
+      if (proyectos[i].titulo==nombre)
+      {
+        return proyectos[i]
+      }
+    }
 }
 
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto ,buscarPorNombre};
