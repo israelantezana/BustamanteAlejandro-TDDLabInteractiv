@@ -18,8 +18,6 @@ formularioMetrica.addEventListener("submit", (event) => {
 
         const nuevaMetrica = crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura);
 
-        mostrarMetricas(nuevaMetrica, listaMetricas);
-
-        formularioMetrica.reset();
+        mostrarMetricas(nuevaMetrica, listaMetricas); 
     }
 });
