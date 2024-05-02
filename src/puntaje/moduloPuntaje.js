@@ -3,10 +3,10 @@ import { crearMetrica } from "../MetricaIndex/moduloMetrica";
 function CalcularPuntosPorPruebas(pruebasAñadidas) {
   let puntos = 0;
   if (pruebasAñadidas === 1) {
-     puntos = 2;
+     puntos = 50;
   }
   if (pruebasAñadidas > 1 && pruebasAñadidas <= 3) {
-    puntos = 1;
+    puntos = 25;
   }
   if (pruebasAñadidas > 3 || pruebasAñadidas === 0) {
     puntos = 0;
@@ -17,10 +17,10 @@ function CalcularPuntosPorPruebas(pruebasAñadidas) {
 function CalcularPuntosPorLineas(LineasAñadidas) {
   let puntos = 0;
   if (LineasAñadidas >= 5  && LineasAñadidas <= 10) {
-     puntos = 3;
+     puntos = 75;
   }
   if (LineasAñadidas <= 4 || (LineasAñadidas >= 11 && LineasAñadidas <= 20) ) {
-    puntos = 1;
+    puntos = 25;
   }
   if (LineasAñadidas >= 21 ) {
     puntos = 0;
