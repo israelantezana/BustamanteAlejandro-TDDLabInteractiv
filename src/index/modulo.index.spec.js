@@ -64,7 +64,6 @@ describe("crearProyecto", () => {
     expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
   });
   //Examen Ledezma
-
   
     it("Debería devolver el proyecto si se encuentra en la lista de proyectos", () => {
       const proyectos = [
@@ -74,6 +73,17 @@ describe("crearProyecto", () => {
       ];
       const tituloBuscado = "Proyecto 2";
       expect(buscarProyecto(tituloBuscado, proyectos)).toEqual({ titulo: "Proyecto 2", descripcion: "Descripción del Proyecto 2" });
+    });
+  
+    it("Debería devolver null si el proyecto no se encuentra en la lista de proyectos", () => {
+      const proyectos = [
+        { titulo: "Proyecto 1", descripcion: "Descripción del Proyecto 1" },
+        { titulo: "Proyecto 2", descripcion: "Descripción del Proyecto 2" },
+        { titulo: "Proyecto 3", descripcion: "Descripción del Proyecto 3" }
+      ];
+      const tituloBuscado = "Proyecto 4";
+      const proyectoEncontrado = buscarProyecto(tituloBuscado, proyectos);
+      expect(proyectoEncontrado).toBeNull();
     });
   
 
