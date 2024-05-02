@@ -67,7 +67,7 @@ describe("crearProyecto", () => {
     let nuevoProyecto1 = new Proyecto("t1", "d2");
     let proyectos=[];
     proyectos.push(nuevoProyecto1);
-    expect(buscarNombrProyecto("",proyectos)).toEqual("No hay");
+    expect(buscarNombrProyecto("t2",proyectos)).toEqual("No hay");
   });
   it("se creo metodo Prueba para buscar por nombre el metodo devuelve el nombre del proyecto", () => {
     let nuevoProyecto1 = new Proyecto("t1", "d2");
@@ -75,4 +75,11 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto1);
     expect(buscarNombrProyecto("t1",proyectos)).toEqual("t1");
   });
+
+  it("devuelve el nombre del proyecto al buscar un nombre existente", () => {
+    const nuevoProyecto1 = new Proyecto("Proyecto ABC", "d2");
+    const proyectos = [nuevoProyecto1];
+    expect(buscarNombrProyecto("ABC", proyectos)).toEqual("Proyecto ABC");
+  });
+  
 });

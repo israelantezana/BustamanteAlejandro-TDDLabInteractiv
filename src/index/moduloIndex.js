@@ -51,16 +51,18 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-function buscarNombrProyecto(nombreBusqueda,proyectos) {
-
-  const proyectoEncontrado = proyectos.find(proyecto => proyecto.titulo.toLowerCase() === nombreBusqueda.toLowerCase());
+function buscarNombrProyecto(nombreBusqueda, proyectos) {
+  const proyectoEncontrado = proyectos.find(proyecto =>
+    proyecto.titulo.toLowerCase().includes(nombreBusqueda.toLowerCase())
+  );
 
   if (proyectoEncontrado) {
-    return proyectoEncontrado.titulo;
+    return proyectoEncontrado.titulo; 
   } else {
     return "No hay";
   }
 }
+
 
 
 
