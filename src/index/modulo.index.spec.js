@@ -81,5 +81,18 @@ describe("crearProyecto", () => {
     const proyectos = [nuevoProyecto1];
     expect(buscarNombrProyecto("ABC", proyectos)).toEqual("Proyecto ABC");
   });
+
+  it("devuelve una lista de nombres de proyectos que coinciden con el nombre de búsqueda", () => {
+    const nuevoProyecto1 = new Proyecto("Proyecto ABC", "d2");
+    const nuevoProyecto2 = new Proyecto("ABC Proyecto", "d3");
+    const nuevoProyecto3 = new Proyecto("Otro Proyecto", "d4");
+    const proyectos = [nuevoProyecto1, nuevoProyecto2, nuevoProyecto3];
+  
+    const resultados = buscarNombrProyecto("ABC", proyectos);
+  
+    expect(buscarNombrProyecto("ABC", proyectos)).toEqual("Proyecto ABC");
+  });
+  
+  
   
 });
