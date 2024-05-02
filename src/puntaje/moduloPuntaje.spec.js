@@ -45,4 +45,7 @@ describe("generarRecomendacionPersonalizada", () => {
   it("Debería generar una recomendacion para el caso en que un puntaje sea malo y los otros dos sean excelentes", () => {
     expect(generarRecomendacion(0, 75, 100)).toEqual("Obtuviste un puntaje bajo en la cantidad de pruebas. Te hace falta trabajar mucho esta métrica. Obtuviste un puntaje muy alto en líneas de código. ¡Continúa trabajando así. Obtuviste un puntaje muy alto en la cobertura de código. ¡Continúa trabajando así. ");
   });
+  it("Debería generar una recomendacion para el caso en que haya puntajes regulares", () => {
+    expect(generarRecomendacion(25, 25, 51)).toEqual("Obtuviste un puntaje aceptable en la cantidad de pruebas. Todavía puedes mejorar esta métrica. Obtuviste un puntaje aceptable en líneas de código. Todavía puedes mejorar esta métrica. Obtuviste un puntaje aceptable en la cobertura de código. Todavía puedes mejorar esta métrica. ");
+  });
 });
