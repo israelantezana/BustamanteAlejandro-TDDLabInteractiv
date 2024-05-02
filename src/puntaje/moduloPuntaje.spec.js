@@ -42,4 +42,7 @@ describe("generarRecomendacionPersonalizada", () => {
   it("Debería generar una recomendacion para el caso en que todos los puntajes sean malos", () => {
     expect(generarRecomendacion(0, 0, 0)).toEqual("Tus puntajes son muy bajos. Debes mejorar en todas las métricas");
   });
+  it("Debería generar una recomendacion para el caso en que un puntaje sea malo y los otros dos sean excelentes", () => {
+    expect(generarRecomendacion(0, 75, 100)).toEqual("Obtuviste un puntaje bajo en la cantidad de pruebas. Te hace falta trabajar mucho esta métrica. Obtuviste un puntaje muy alto en líneas de código. ¡Continúa trabajando así. Obtuviste un puntaje muy alto en la cobertura de código. ¡Continúa trabajando así. ");
+  });
 });
