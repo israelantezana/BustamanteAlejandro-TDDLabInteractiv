@@ -1,6 +1,7 @@
 import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto} from "./moduloIndex.js";
 
 const botonAgregarProyecto = document.querySelector("#boton-agregar-proyecto");
+const botonBuscarProyecto = document.querySelector("#boton-buscar-proyecto");
 let proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
 const parametros = new URLSearchParams(window.location.search);
 const titulo = parametros.get("Titulo");

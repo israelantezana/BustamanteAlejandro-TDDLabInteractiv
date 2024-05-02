@@ -51,4 +51,7 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
+function mostrarProyectosBuscados(proyectos) {
+  return null;
+}
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto, mostrarProyectosBuscados };
