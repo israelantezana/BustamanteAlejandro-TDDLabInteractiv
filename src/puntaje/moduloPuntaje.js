@@ -71,6 +71,9 @@ function generarRecomendacion(puntajeFinalPruebas, puntajeFinalLineas, puntajeFi
   if (puntajeFinalPruebas === 0 && puntajeFinalLineas === 0 && puntajeFinalCobertura < 10) {
     return "Tus puntajes son muy bajos. Debes mejorar en todas las métricas";
   }
+  if (puntajeFinalPruebas === 50 && puntajeFinalLineas === 75 && puntajeFinalCobertura > 75) {
+    return "Tu puntaje fue muy alto en todas las métricas, ¡felicidades! ";
+  }
   if (puntajeFinalPruebas === 50) {
     recomendacion += concaternarTextoPuntajeAlto("la cantidad de pruebas.");
   }

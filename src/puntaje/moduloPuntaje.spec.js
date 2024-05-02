@@ -48,4 +48,7 @@ describe("generarRecomendacionPersonalizada", () => {
   it("Debería generar una recomendacion para el caso en que haya puntajes regulares", () => {
     expect(generarRecomendacion(25, 25, 51)).toEqual("Obtuviste un puntaje aceptable en la cantidad de pruebas. Todavía puedes mejorar esta métrica. Obtuviste un puntaje aceptable en líneas de código. Todavía puedes mejorar esta métrica. Obtuviste un puntaje aceptable en la cobertura de código. Todavía puedes mejorar esta métrica. ");
   });
+  it("Debería generar una recomendacion para el caso en que todas las métricas sean altas", () => {
+    expect(generarRecomendacion(50, 75, 90)).toEqual("Tu puntaje fue muy alto en todas las métricas, ¡felicidades! ");
+  });
 });
