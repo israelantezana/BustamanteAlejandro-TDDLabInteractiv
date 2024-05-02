@@ -1,4 +1,4 @@
-import { CalcularPuntosPorPruebas ,CalcularPuntosPorLineas, puntajePorCobertura} from "./moduloPuntaje.js";
+import { CalcularPuntosPorPruebas ,CalcularPuntosPorLineas, puntajePorCobertura, generarRecomendacion} from "./moduloPuntaje.js";
 
 describe("Calcular Puntos", () => {
   it("Debería obtener 50 puntos si las pruebas son 1", () => {
@@ -35,5 +35,20 @@ describe("calcularPuntajePorCobertura", () => {
   });
   it("Debería otorgar un puntaje proporcional al logaritmo en base 10. Caso cobertura al 75%", () => {
     expect(puntajePorCobertura(75)).toEqual(87);
+  });
+});
+
+describe("generarRecomendacionPersonalizada", () => {
+  it("Debería generar una recomendacion para el caso en que todos los puntajes sean malos", () => {
+    expect(generarRecomendacion(0, 0, 0)).toEqual("Tus puntajes son muy bajos. Debes mejorar en todas las métricas");
+  });
+  it("Debería generar una recomendacion para el caso en que un puntaje sea malo y los otros dos sean excelentes", () => {
+    expect(generarRecomendacion(0, 75, 100)).toEqual("Obtuviste un puntaje bajo en la cantidad de pruebas. Te hace falta trabajar mucho esta métrica. Obtuviste un puntaje muy alto en líneas de código. ¡Continúa trabajando así. Obtuviste un puntaje muy alto en la cobertura de código. ¡Continúa trabajando así. ");
+  });
+  it("Debería generar una recomendacion para el caso en que haya puntajes regulares", () => {
+    expect(generarRecomendacion(25, 25, 51)).toEqual("Obtuviste un puntaje aceptable en la cantidad de pruebas. Todavía puedes mejorar esta métrica. Obtuviste un puntaje aceptable en líneas de código. Todavía puedes mejorar esta métrica. Obtuviste un puntaje aceptable en la cobertura de código. Todavía puedes mejorar esta métrica. ");
+  });
+  it("Debería generar una recomendacion para el caso en que todas las métricas sean altas", () => {
+    expect(generarRecomendacion(50, 75, 90)).toEqual("Tu puntaje fue muy alto en todas las métricas, ¡felicidades! ");
   });
 });
