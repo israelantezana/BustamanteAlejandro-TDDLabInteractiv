@@ -6,6 +6,9 @@ function CalcularPuntosPorPruebas(pruebasAñadidas) {
   if (pruebasAñadidas > 1 && pruebasAñadidas <= 3) {
     puntos = 1;
   }
+  if (pruebasAñadidas > 3 || pruebasAñadidas === 0) {
+    puntos = 0;
+  }
   return puntos
 }
 
