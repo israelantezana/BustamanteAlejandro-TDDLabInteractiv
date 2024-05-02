@@ -53,15 +53,16 @@ function eliminarProyecto(proyecto, proyectos) {
 
 function buscarPorNombre(nombre, proyectos){
     const STRINGVACIO=""
+    let iteradorDeProyectos;
     if (nombre==STRINGVACIO)
     {
       return "Porfavor ingrese un nombre para la busqueda"
     }
-    for (let i=0; i<proyectos.length;i++)
+    for (iteradorDeProyectos=0; iteradorDeProyectos<proyectos.length;iteradorDeProyectos++)
     {
-      if (proyectos[i].titulo==nombre)
+      if (proyectos[iteradorDeProyectos].titulo==nombre)
       {
-        return proyectos[i]
+        return proyectos[iteradorDeProyectos]
       }
     }
 }
