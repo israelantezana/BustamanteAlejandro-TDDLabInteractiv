@@ -51,12 +51,14 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-function BuscarProyecto(proyectos) {
-  const numeroCero  = 0;
-  if (proyectos.length === numeroCero) {
-    return "No tiene ningun proyecto creado";
+function buscarProyecto(titulo, proyectos) {
+for (let iterador = 0; iterador < proyectos.length; iterador++) {
+    if (proyectos[iterador].titulo === titulo) {
+      return proyectos[iterador];
+    }
   }
+  return null;
 }
 
 
-export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto,BuscarProyecto };
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto,buscarProyecto };

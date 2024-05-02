@@ -1,4 +1,4 @@
-import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto, BuscarProyecto} from "./moduloIndex.js"
+import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto, buscarProyecto} from "./moduloIndex.js"
 import Proyecto from "../Proyecto.js";
 
 describe("crearProyecto", () => {
@@ -63,16 +63,19 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto3)
     expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
   });
-  //Examen2 LedezmaRodriguez
-  it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno ", () => {
-    expect(BuscarProyecto([])).toEqual("No tiene ningun proyecto creado")
-  });
-  it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno ", () => {
-    expect(BuscarProyecto([])).toEqual("No tiene ningun proyecto creado")
-  });
+  //Examen Ledezma
 
+  
+    it("Debería devolver el proyecto si se encuentra en la lista de proyectos", () => {
+      const proyectos = [
+        { titulo: "Proyecto 1", descripcion: "Descripción del Proyecto 1" },
+        { titulo: "Proyecto 2", descripcion: "Descripción del Proyecto 2" },
+        { titulo: "Proyecto 3", descripcion: "Descripción del Proyecto 3" }
+      ];
+      const tituloBuscado = "Proyecto 2";
+      expect(buscarProyecto(tituloBuscado, proyectos)).toEqual({ titulo: "Proyecto 2", descripcion: "Descripción del Proyecto 2" });
+    });
+  
 
 });
-
-w
 
