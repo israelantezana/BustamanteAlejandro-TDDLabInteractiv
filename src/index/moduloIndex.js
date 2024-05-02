@@ -52,7 +52,8 @@ function eliminarProyecto(proyecto, proyectos) {
 }
 
 function buscarPorNombre(nombre, proyectos){
-    if (nombre=="")
+    const STRINGVACIO=""
+    if (nombre==STRINGVACIO)
     {
       return "Porfavor ingrese un nombre para la busqueda"
     }
