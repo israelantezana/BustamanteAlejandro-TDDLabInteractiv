@@ -1,3 +1,4 @@
+//nuevo file
 import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,} from "./moduloIndex.js";
 
 const botonAgregarProyecto = document.querySelector("#boton-agregar-proyecto");
