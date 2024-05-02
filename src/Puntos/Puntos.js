@@ -17,9 +17,12 @@ function CalcularPuntosPorLineas(LineasAñadidas) {
   if (LineasAñadidas >= 5  && LineasAñadidas <= 10) {
      puntos = 3;
   }
-  if (LineasAñadidas <= 4 || LineasAñadidas >= 11 ) {
+  if (LineasAñadidas <= 4 || (LineasAñadidas >= 11 && LineasAñadidas <= 20) ) {
     puntos = 1;
- }
+  }
+  if (LineasAñadidas >= 21 ) {
+    puntos = 0;
+  }
   return puntos;
 }
 

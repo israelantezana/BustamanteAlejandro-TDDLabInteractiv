@@ -18,6 +18,9 @@ describe("Calcular Puntos", () => {
     expect(CalcularPuntosPorLineas(15)).toBe(1);
     expect(CalcularPuntosPorLineas(1)).toBe(1);
   });
+  it("Debería obtener 0 puntos si las lineas de codigo son mayores a 20", () => {
+    expect(CalcularPuntosPorLineas(21)).toBe(0);
+  });
 });
 
 
