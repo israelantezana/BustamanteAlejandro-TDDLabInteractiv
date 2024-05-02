@@ -41,10 +41,11 @@ proyectos.forEach((proyecto) => {
   const mostrarMetricasButton = document.createElement("button");
   mostrarMetricasButton.textContent = "Mostrar Métricas";
   mostrarMetricasButton.addEventListener("click", () => {
-    // Mostrar las métricas del proyecto
-    mostrarMetricasProyecto(proyecto);
+    const url = `verMetricas.html?Titulo=${encodeURIComponent(proyecto.titulo)}`;
+    window.location.href = url;
   });
   proyectoElement.appendChild(mostrarMetricasButton);
+  
 
   // Contenedor para las métricas del proyecto
   const metricasContainer = document.createElement("div");

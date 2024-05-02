@@ -45,10 +45,8 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
         }
       }
 
-
-      
       function mostrarMetricasProyecto(proyecto) {
-        const metricasContainer = document.querySelector(`#${proyecto.titulo}-metricas`);
+        const metricasContainer = document.querySelector("#metricas-container");
         metricasContainer.innerHTML = ""; // Limpiar el contenedor antes de mostrar las métricas
     
         proyecto.metricas.forEach((metrica, index) => {
@@ -64,4 +62,5 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
     }
     
     
+
     export { crearMetrica, agregarMetricaAProyecto, eliminarMetricaDeProyecto, mostrarMetricasProyecto };
