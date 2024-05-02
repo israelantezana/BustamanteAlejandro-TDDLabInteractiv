@@ -46,10 +46,19 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
       }
 
       function modificarMetrica(metrica, nuevasPruebasAñadidas, nuevasLineasDeCodigo, nuevaCobertura) {
-        metrica.pruebasAñadidas = nuevasPruebasAñadidas;
-        metrica.lineasDeCodigo = nuevasLineasDeCodigo;
-        metrica.cobertura = nuevaCobertura;
-        return metrica;
+        return { ...metrica, pruebasAñadidas: nuevasPruebasAñadidas, lineasDeCodigo: nuevasLineasDeCodigo, cobertura: nuevaCobertura };
       }
+      
+/*
+      function mostrarMetricas(proyecto, proyectoElement) {
+        const metricasActuales = proyectoElement.querySelectorAll(".metrica");
+        metricasActuales.forEach(metrica => metrica.remove());
+        proyecto.metricas.forEach(metrica => {
+          const nuevaMetricaElement = document.createElement("div");
+          nuevaMetricaElement.textContent = `Pruebas añadidas: ${metrica.pruebasAñadidas}, Líneas de código: ${metrica.lineasDeCodigo}, Cobertura: ${metrica.cobertura}%`;
+          nuevaMetricaElement.classList.add("metrica");
+          proyectoElement.appendChild(nuevaMetricaElement);
+        });
+      }*/
       
 export { crearMetrica, agregarMetricaAProyecto ,eliminarMetricaDeProyecto,modificarMetrica };
