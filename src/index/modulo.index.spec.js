@@ -1,4 +1,4 @@
-import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto} from "./moduloIndex.js"
+import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto, buscarNombrProyecto} from "./moduloIndex.js"
 import Proyecto from "../Proyecto.js";
 
 describe("crearProyecto", () => {
@@ -63,5 +63,16 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto3)
     expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
   });
-
+  it("se creo metodo Prueba para buscar por nombre el metodo devuelve no hay", () => {
+    let nuevoProyecto1 = new Proyecto("t1", "d2");
+    let proyectos=[];
+    proyectos.push(nuevoProyecto1);
+    expect(buscarNombrProyecto("",proyectos)).toEqual("No hay");
+  });
+  it("se creo metodo Prueba para buscar por nombre el metodo devuelve el nombre del proyecto", () => {
+    let nuevoProyecto1 = new Proyecto("t1", "d2");
+    let proyectos=[];
+    proyectos.push(nuevoProyecto1);
+    expect(buscarNombrProyecto("t1",proyectos)).toEqual("t1");
+  });
 });

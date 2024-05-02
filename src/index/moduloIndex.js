@@ -51,4 +51,17 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
+function buscarNombrProyecto(nombreBusqueda,proyectos) {
+
+  const proyectoEncontrado = proyectos.find(proyecto => proyecto.titulo.toLowerCase() === nombreBusqueda.toLowerCase());
+
+  if (proyectoEncontrado) {
+    return proyectoEncontrado.titulo;
+  } else {
+    return "No hay";
+  }
+}
+
+
+
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto, buscarNombrProyecto };
