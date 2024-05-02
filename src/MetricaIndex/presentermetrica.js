@@ -1,24 +1,25 @@
-//nuevo file
-import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,} from "./moduloIndex.js";
+import { crearMetrica, mostrarMetricas } from "./moduloMetrica.js";
 
-const botonAgregarProyecto = document.querySelector("#boton-agregar-proyecto");
-let proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
-const parametros = new URLSearchParams(window.location.search);
-const titulo = parametros.get("Titulo");
-const descripcion = parametros.get("Descripcion");
+const formularioMetrica = document.querySelector("#formulario-metrica");
+const listaMetricas = document.querySelector("#lista-metricas");
+const mensajeError = document.querySelector("#mensaje-error");
 
-let nuevoProyecto = crearProyecto(titulo, descripcion);
-agregarProyectoAProyectos(nuevoProyecto, proyectos);
-localStorage.setItem("proyectos", JSON.stringify(proyectos));
-mostrarProyectos(proyectos);
-const proyectosContainer = document.createElement("div");
-proyectos.forEach((proyecto) => {
-  const proyectoElement = document.createElement("div");
-  proyectoElement.innerHTML = `<h2>${proyecto.titulo}</h2><p>${proyecto.descripcion}</p>`;
-  proyectosContainer.appendChild(proyectoElement);
-});
-document.body.appendChild(proyectosContainer);
+formularioMetrica.addEventListener("submit", (event) => {
+    event.preventDefault();
 
-botonAgregarProyecto.addEventListener("click", function () {
-  window.location.href = "proyectos.html";
+    const pruebasAñadidas = parseInt(formularioMetrica.querySelector("#pruebas-anadidas").value);
+    const lineasDeCodigo = parseInt(formularioMetrica.querySelector("#lineas-codigo").value);
+    const cobertura = parseFloat(formularioMetrica.querySelector("#cobertura").value);
+
+    if (isNaN(pruebasAñadidas) || isNaN(lineasDeCodigo) || isNaN(cobertura)) {
+        mensajeError.textContent = "Por favor, complete todos los campos correctamente.";
+    } else {
+        mensajeError.textContent = "";
+
+        const nuevaMetrica = crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura);
+
+        mostrarMetricas(nuevaMetrica, listaMetricas);
+
+        formularioMetrica.reset();
+    }
 });
