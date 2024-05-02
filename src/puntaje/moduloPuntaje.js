@@ -41,44 +41,45 @@ function puntajePorCobertura(porcetajeCubierto) {
     return Math.trunc(puntajeLogaritmico(metrica.cobertura));
 }
 
+function concaternarTextoPuntajeAlto(metrica) {
+  const PREFIJO = "Obtuviste un puntaje muy alto en ";
+  const SUFIJO = " ¡Continúa trabajando así. ";
+  let texto = PREFIJO;
+  texto += metrica;
+  texto += SUFIJO;
+  return texto;
+}
+function concaternarTextoPuntajeBajo(metrica) {
+  const PREFIJO = "Obtuviste un puntaje bajo en ";
+  const SUFIJO = " Te hace falta trabajar mucho esta métrica. ";
+  let texto = PREFIJO;
+  texto += metrica;
+  texto += SUFIJO;
+  return texto;
+}
+
 function generarRecomendacion(puntajeFinalPruebas, puntajeFinalLineas, puntajeFinalCobertura) {
-  const PREFIJO_PUNTAJE_ALTO = "Obtuviste un puntaje muy alto en ";
-  const PREFIJO_PUNTAJE_BAJO = "Obtuviste un puntaje bajo en ";
-  const SUFIJO_PUNTAJE_ALTO = "¡Continúa trabajando así. ";
-  const SUFIJO_PUNTAJE_BAJO = "Te hace falta trabajar mucho esta métrica. ";
   let recomendacion = "";
   if (puntajeFinalPruebas === 0 && puntajeFinalLineas === 0 && puntajeFinalCobertura < 10) {
     return "Tus puntajes son muy bajos. Debes mejorar en todas las métricas";
   }
-  if (puntajeFinalPruebas === 50) {
-    recomendacion += PREFIJO_PUNTAJE_ALTO;
-    recomendacion += "la cantidad de pruebas. ";
-    recomendacion += SUFIJO_PUNTAJE_ALTO;
+  if (puntajeFinalPruebas >= 50) {
+    recomendacion += concaternarTextoPuntajeAlto("la cantidad de pruebas.");
   }
   else {
-    recomendacion += PREFIJO_PUNTAJE_BAJO;
-    recomendacion += "la cantidad de pruebas. ";
-    recomendacion += SUFIJO_PUNTAJE_BAJO;
+    recomendacion += concaternarTextoPuntajeBajo("la cantidad de pruebas.");
   }
-  if (puntajeFinalLineas === 75) {
-    recomendacion += PREFIJO_PUNTAJE_ALTO;
-    recomendacion += "líneas de código. ";
-    recomendacion += SUFIJO_PUNTAJE_ALTO;
+  if (puntajeFinalLineas >= 50) {
+    recomendacion += concaternarTextoPuntajeAlto("líneas de código.");
   }
   else {
-    recomendacion += PREFIJO_PUNTAJE_BAJO;
-    recomendacion += "líneas de código. ";
-    recomendacion += SUFIJO_PUNTAJE_BAJO;
+    recomendacion += concaternarTextoPuntajeBajo("líneas de código.");
   }
-  if (puntajeFinalCobertura > 90) {
-    recomendacion += PREFIJO_PUNTAJE_ALTO;
-    recomendacion += "la cobertura de código. ";
-    recomendacion += SUFIJO_PUNTAJE_ALTO;
+  if (puntajeFinalCobertura >= 70) {
+    recomendacion += concaternarTextoPuntajeAlto("la cobertura de código.");
   }
   else {
-    recomendacion += PREFIJO_PUNTAJE_BAJO;
-    recomendacion += "la cobertura de código. ";
-    recomendacion += SUFIJO_PUNTAJE_BAJO;
+    recomendacion += concaternarTextoPuntajeBajo("la cobertura de código.");
   }
   return recomendacion;
 }
