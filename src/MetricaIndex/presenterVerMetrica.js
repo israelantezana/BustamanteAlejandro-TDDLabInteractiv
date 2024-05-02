@@ -1,8 +1,6 @@
 import { mostrarMetricasProyecto } from "./moduloMetrica.js";
 
-const botonVerMetricas = document.querySelector("#boton-ver-metricas");
-
-botonVerMetricas.addEventListener("click", () => {
+document.addEventListener("DOMContentLoaded", () => {
     const parametros = new URLSearchParams(window.location.search);
     const tituloProyecto = parametros.get("Titulo");
 

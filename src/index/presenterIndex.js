@@ -1,5 +1,4 @@
 import { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto } from "./moduloIndex.js";
-import { mostrarMetricasProyecto } from "../MetricaIndex/moduloMetrica.js";
 
 const botonAgregarProyecto = document.querySelector("#boton-agregar-proyecto");
 let proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
@@ -18,7 +17,7 @@ proyectos.forEach((proyecto) => {
   const proyectoElement = document.createElement("div");
   proyectoElement.innerHTML = `<h2>${proyecto.titulo}</h2><p>${proyecto.descripcion}</p>`;
   
-  // Botón "Eliminar" para cada proyecto
+
   const deleteButton = document.createElement("button");
   deleteButton.textContent = "Eliminar";
   deleteButton.addEventListener("click", () => {
@@ -28,7 +27,6 @@ proyectos.forEach((proyecto) => {
   });
   proyectoElement.appendChild(deleteButton);
   
-  // Botón "Agregar Métrica" para cada proyecto
   const agregarMetricaButton = document.createElement("button");
   agregarMetricaButton.textContent = "Agregar Métrica";
   agregarMetricaButton.addEventListener("click", () => {
@@ -37,17 +35,14 @@ proyectos.forEach((proyecto) => {
   });
   proyectoElement.appendChild(agregarMetricaButton);
   
-  // Botón "Mostrar Métricas" para cada proyecto
   const mostrarMetricasButton = document.createElement("button");
   mostrarMetricasButton.textContent = "Mostrar Métricas";
   mostrarMetricasButton.addEventListener("click", () => {
-    const url = `verMetricas.html?Titulo=${encodeURIComponent(proyecto.titulo)}`;
-    window.location.href = url;
+    window.location.href = "verMetricas.html";
   });
   proyectoElement.appendChild(mostrarMetricasButton);
   
 
-  // Contenedor para las métricas del proyecto
   const metricasContainer = document.createElement("div");
   proyectoElement.appendChild(metricasContainer);
   

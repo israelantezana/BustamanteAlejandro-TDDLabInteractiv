@@ -8,7 +8,7 @@ const proyectosContainer = document.querySelector("#proyectos-container");
 let proyectoActual = JSON.parse(localStorage.getItem("proyectoActual")) || { metricas: [] };
 
 metricaForm.addEventListener("submit", (event) => {
-    event.preventDefault(); // Evitar que el formulario se envíe por defecto
+    event.preventDefault(); 
 
     const pruebas = parseInt(metricaForm.querySelector("#pruebas").value);
     const lineas = parseInt(metricaForm.querySelector("#lineas").value);
@@ -16,14 +16,16 @@ metricaForm.addEventListener("submit", (event) => {
 
     const metrica = crearMetrica(pruebas, lineas, cobertura);
     if (metrica !== null) {
-        div.innerHTML = "<p>Métrica creada correctamente.</p>";
         agregarMetricaAProyecto(metrica, proyectoActual);
         localStorage.setItem("proyectoActual", JSON.stringify(proyectoActual));
-        mostrarMetricasProyecto(proyectoActual);
+        div.innerHTML = "<p>Métrica creada correctamente.</p>";
+
+        window.location.href = "index.html";
     } else {
         div.innerHTML = "<p>Por favor, ingrese valores válidos para las métricas.</p>";
     }
 });
+
 
 botonRegresar.addEventListener("click", function() {
     window.location.href = "index.html";
