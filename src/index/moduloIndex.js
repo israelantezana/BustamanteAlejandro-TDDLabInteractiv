@@ -51,7 +51,24 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-function mostrarProyectosBuscados(proyectos) {
-  return null;
+function mostrarProyectosBuscados(proyectos, tituloBuscado) {
+  if(proyectos === null) {
+    return null;
+  }
+  let proyectosString = "";
+  for (let i = 0; i < proyectos.length; i++) {
+    if (tituloBuscado === proyectos[i].titulo){
+      proyectosString =
+        proyectosString +
+        "Titulo:" +
+        proyectos[i].titulo +
+        "Descripcion:" +
+        proyectos[i].descripcion;
+      if (i < proyectos.length - 1) {
+        proyectosString = proyectosString + ",";
+      }
+    }
+  }
+  return proyectosString;
 }
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto, mostrarProyectosBuscados };

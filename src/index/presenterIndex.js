@@ -1,3 +1,4 @@
+import Proyecto from "../Proyecto.js";
 import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto} from "./moduloIndex.js";
 
 const botonAgregarProyecto = document.querySelector("#boton-agregar-proyecto");
@@ -33,4 +34,7 @@ document.body.appendChild(proyectosContainer);
 
 botonAgregarProyecto.addEventListener("click", function () {
   window.location.href = "proyectos.html";
+});
+
+botonBuscarProyecto.addEventListener("click", function () {
 });

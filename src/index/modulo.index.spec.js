@@ -67,7 +67,11 @@ describe("crearProyecto", () => {
 });
 
 describe("buscarProyecto", () => {
-  it("Si se trata de buscar un poryecto que no existe se deberia devolver null", () => {
-    expect(mostrarProyectosBuscados(null)).toEqual(null);
+  it("Si se trata de buscar un proyecto que no existe se deberia devolver null", () => {
+    expect(mostrarProyectosBuscados(null, "proyecto1")).toEqual(null);
+  });
+  it("Si se trata de buscar un proyecto que existe se devuelve la lista de proyectos que compartan el nombre", () => {
+    let proyectos = [new Proyecto("proyecto1", "proyecto1")];
+    expect(mostrarProyectosBuscados(proyectos, "proyecto1")).toEqual("Titulo:proyecto1Descripcion:proyecto1");
   });
 });
