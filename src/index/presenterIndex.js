@@ -1,16 +1,10 @@
-import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto} from "./moduloIndex.js";
+import {mostrarProyectos,eliminarProyecto} from "./moduloIndex.js";
 
 const botonAgregarProyecto = document.querySelector("#boton-agregar-proyecto");
 let proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
-const parametros = new URLSearchParams(window.location.search);
-const titulo = parametros.get("Titulo");
-const descripcion = parametros.get("Descripcion");
 
-const nuevaURL = window.location.pathname;
-window.history.replaceState({}, document.title, nuevaURL);
-let nuevoProyecto = crearProyecto(titulo, descripcion);
-agregarProyectoAProyectos(nuevoProyecto, proyectos);
-localStorage.setItem("proyectos", JSON.stringify(proyectos));
+
+
 mostrarProyectos(proyectos);
 const proyectosContainer = document.createElement("div");
 proyectos.forEach((proyecto) => {
@@ -31,5 +25,5 @@ proyectos.forEach((proyecto) => {
 document.body.appendChild(proyectosContainer);
 
 botonAgregarProyecto.addEventListener("click", function () {
-  window.location.href = "proyectos.html";
+  window.location.href = "formularioProyectos.html";
 });

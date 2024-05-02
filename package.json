@@ -2,10 +2,10 @@
   "name": "parcel-jest-base",
   "version": "1.0.0",
   "description": "",
-  "default": "index.html",
+  "default": "./html/index.html",
   "scripts": {
-    "start": "parcel ./html/index.html ./html/proyectos.html",
-    "build": "parcel build ./html/index.html ./html/proyectos.html",
+    "start": "parcel ./html/index.html ./html/formularioProyectos.html",
+    "build": "parcel build ./html/index.html ./html/formularioProyectos.html",
     "test": "jest --watch",
     "test-once": "jest --verbose --coverage",
     "cypress": "cypress open",
