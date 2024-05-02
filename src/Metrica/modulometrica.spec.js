@@ -8,6 +8,13 @@ describe("crearMetrica", () => {
     expect(metrica.pruebasAñadidas).toBe(10);
     expect(metrica.lineasDeCodigo).toBe(100);
     expect(metrica.cobertura).toBe(80);
-
   });
+  
+  it("Debería manejar valores nulos o indefinidos", () => {
+    const metrica = crearMetrica(null, undefined, 50);
+    expect(metrica.pruebasAñadidas).toBe(0);
+    expect(metrica.lineasDeCodigo).toBe(0);
+    expect(metrica.cobertura).toBe(50);
+  });
+
 });
