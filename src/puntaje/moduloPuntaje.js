@@ -41,4 +41,8 @@ function puntajePorCobertura(porcetajeCubierto) {
     return Math.trunc(puntajeLogaritmico(metrica.cobertura));
 }
 
-export {CalcularPuntosPorPruebas, CalcularPuntosPorLineas, puntajePorCobertura};
+function generarRecomendacion(puntajeFinalPruebas, puntajeFinalLineas, puntajeFinalCobertura) {
+  return "Tus puntajes son muy bajos. Debes mejorar en todas las métricas";
+}
+
+export {CalcularPuntosPorPruebas, CalcularPuntosPorLineas, puntajePorCobertura, generarRecomendacion};

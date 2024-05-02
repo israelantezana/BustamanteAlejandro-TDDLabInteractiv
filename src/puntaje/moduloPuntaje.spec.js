@@ -1,4 +1,4 @@
-import { CalcularPuntosPorPruebas ,CalcularPuntosPorLineas, puntajePorCobertura} from "./moduloPuntaje.js";
+import { CalcularPuntosPorPruebas ,CalcularPuntosPorLineas, puntajePorCobertura, generarRecomendacion} from "./moduloPuntaje.js";
 
 describe("Calcular Puntos", () => {
   it("Debería obtener 50 puntos si las pruebas son 1", () => {
@@ -35,5 +35,11 @@ describe("calcularPuntajePorCobertura", () => {
   });
   it("Debería otorgar un puntaje proporcional al logaritmo en base 10. Caso cobertura al 75%", () => {
     expect(puntajePorCobertura(75)).toEqual(87);
+  });
+});
+
+describe("generarRecomendacionPersonalizada", () => {
+  it("Debería generar una recomendacion para el caso en que todos los puntajes sean malos", () => {
+    expect(generarRecomendacion(0, 0, 0)).toEqual("Tus puntajes son muy bajos. Debes mejorar en todas las métricas");
   });
 });
