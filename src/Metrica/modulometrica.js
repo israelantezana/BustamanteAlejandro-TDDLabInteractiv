@@ -8,7 +8,13 @@ function crearMetrica(pruebasAñadidas, lineasDeCodigo, cobertura) {
     if (lineasDeCodigo === null || lineasDeCodigo === undefined || lineasDeCodigo < cero) {
       lineasDeCodigo = cero; 
     }
-   
+    if (cobertura === null || cobertura === undefined || cobertura < cero) {
+      cobertura = cero; 
+    } 
+    if (pruebasAñadidas > 100 || lineasDeCodigo > 100 || cobertura > 100) {
+        console.log("Ponga un valor real porfavor");
+        return null;
+      }
 
     return new Metrica(pruebasAñadidas, lineasDeCodigo, cobertura);
   }
