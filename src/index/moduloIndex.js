@@ -52,7 +52,8 @@ function eliminarProyecto(proyecto, proyectos) {
 }
 
 function BuscarProyecto(proyectos) {
-  if (proyectos.length === 0) {
+  const numeroCero  = 0;
+  if (proyectos.length === numeroCero) {
     return "No tiene ningun proyecto creado";
   }
 }

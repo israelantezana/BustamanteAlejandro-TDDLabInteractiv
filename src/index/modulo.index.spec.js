@@ -64,11 +64,15 @@ describe("crearProyecto", () => {
     expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
   });
   //Examen2 LedezmaRodriguez
-  it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno", () => {
+  it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno ", () => {
+    expect(BuscarProyecto([])).toEqual("No tiene ningun proyecto creado")
+  });
+  it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno ", () => {
     expect(BuscarProyecto([])).toEqual("No tiene ningun proyecto creado")
   });
 
+
 });
 
-
+w
 
