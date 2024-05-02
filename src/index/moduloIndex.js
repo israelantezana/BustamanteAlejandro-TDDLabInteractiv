@@ -52,7 +52,8 @@ function eliminarProyecto(proyecto, proyectos) {
 }
 
 function buscarProyecto(titulo, proyectos) {
-for (let iterador = 0; iterador < proyectos.length; iterador++) {
+const numeroCero = 0;
+for (let iterador = numeroCero; iterador < proyectos.length; iterador++) {
     if (proyectos[iterador].titulo === titulo) {
       return proyectos[iterador];
     }

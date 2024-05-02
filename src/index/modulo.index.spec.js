@@ -86,6 +86,11 @@ describe("crearProyecto", () => {
       expect(proyectoEncontrado).toBeNull();
     });
   
-
+    it("Debería devolver null si la lista de proyectos está vacía", () => {
+      const proyectos = [];
+      const tituloBuscado = "Proyecto 1";
+      const proyectoEncontrado = buscarProyecto(tituloBuscado, proyectos);
+      expect(proyectoEncontrado).toBeNull();
+    });
 });
 
