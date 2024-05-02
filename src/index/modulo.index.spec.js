@@ -83,5 +83,15 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto3)
     expect(buscarPorNombre("t1",proyectos)).toEqual({titulo:"t1",descripcion:"d1",metricas:[]})
   });
+  it("Deberia retornar el mensaje El proyecto TDD no existe si es que el no existe el proyecto", () => {
+    let nuevoProyecto1 = new Proyecto("t1", "d1");
+    let nuevoProyecto2 = new Proyecto("t2", "d2");
+    let nuevoProyecto3 = new Proyecto("t3", "d3");
+    let proyectos=[]
+    proyectos.push(nuevoProyecto1)
+    proyectos.push(nuevoProyecto2)
+    proyectos.push(nuevoProyecto3)
+    expect(buscarPorNombre("t4",proyectos)).toEqual("El proyecto TDD no existe")
+  });
 
 });
