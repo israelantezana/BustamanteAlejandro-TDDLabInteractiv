@@ -60,6 +60,6 @@ for (let iterador = numeroCero; iterador < proyectos.length; iterador++) {
   }
   return null;//Se agrega recien me olvide quitarlo en el anterior commit
 }
-
+//No vi refactorin mas que en los primeros commits:( )
 
 export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto,buscarProyecto };
