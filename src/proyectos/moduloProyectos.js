@@ -10,5 +10,12 @@ function datosFormulariosSonValidos(titulo, descripcion) {
     return true;
   }
 }
-
-export default datosFormulariosSonValidos;
+function datosBuscarSonValidos(titulo) {
+  const STRINGVACIO = "";
+  if (titulo == STRINGVACIO) {
+    return false;
+  } else if (titulo == STRINGVACIO) {
+    return false;
+  }
+}
+export default datosFormulariosSonValidos; datosBuscarSonValidos;
