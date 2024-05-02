@@ -51,7 +51,7 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-function BuscarProyecto(titulo, proyectos) {
+function BuscarProyecto(proyectos) {
   if (proyectos.length === 0) {
     return "No tiene ningun proyecto creado";
   }
