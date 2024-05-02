@@ -51,4 +51,11 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
+function buscarPorNombre(nombre, proyectos){
+    if (nombre=="")
+    {
+      return "Porfavor ingrese un nombre para la busqueda"
+    }
+}
+
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto ,buscarPorNombre};

@@ -1,4 +1,4 @@
-import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto} from "./moduloIndex.js"
+import {crearProyecto,agregarProyectoAProyectos,mostrarProyectos,eliminarProyecto,buscarPorNombre} from "./moduloIndex.js"
 import Proyecto from "../Proyecto.js";
 
 describe("crearProyecto", () => {
@@ -62,6 +62,16 @@ describe("crearProyecto", () => {
     proyectos.push(nuevoProyecto2)
     proyectos.push(nuevoProyecto3)
     expect(eliminarProyecto(nuevoProyecto1,proyectos)).toEqual("Se elimino su proyecto con exito")
+  });
+  it("Deberia retornar el mensaje Porfavor ingrese un nombre para la busqueda si es que el usuario no envio texto para la busqueda", () => {
+    let nuevoProyecto1 = new Proyecto("t1", "d2");
+    let nuevoProyecto2 = new Proyecto("t2", "d2");
+    let nuevoProyecto3 = new Proyecto("t3", "d3");
+    let proyectos=[]
+    proyectos.push(nuevoProyecto1)
+    proyectos.push(nuevoProyecto2)
+    proyectos.push(nuevoProyecto3)
+    expect(buscarPorNombre("",proyectos)).toEqual("Porfavor ingrese un nombre para la busqueda")
   });
 
 });
