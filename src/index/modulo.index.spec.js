@@ -65,3 +65,12 @@ describe("crearProyecto", () => {
   });
 
 });
+
+
+  //Examen2 LedezmaRodriguez
+  describe("BuscarProyecto", () => {
+    it("Se deberia mostrar el mensaje No tiene ningún proyecto creado si efectivamente no se tiene ninguno", () => {
+      expect(mostrarProyectos([])).toEqual("No tiene ningun proyecto creado")
+    });
+
+  });

@@ -51,4 +51,11 @@ function eliminarProyecto(proyecto, proyectos) {
   }
 }
 
-export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto };
+function BuscarProyecto(titulo, proyectos) {
+  if (proyectos.length === 0) {
+    return "No tiene ningun proyecto creado";
+  }
+}
+
+
+export { crearProyecto, agregarProyectoAProyectos, mostrarProyectos, eliminarProyecto,BuscarProyecto };
