@@ -1,9 +1,8 @@
-import { crearMetrica, agregarMetricaAProyecto, eliminarMetricaDeProyecto, mostrarMetricasProyecto } from "./moduloMetrica.js";
+import { crearMetrica, agregarMetricaAProyecto } from "./moduloMetrica.js";
 
 const metricaForm = document.querySelector("#metrica-form");
 const botonRegresar = document.querySelector("#boton-regresar2");
 const div = document.querySelector("#resultado-div");
-const proyectosContainer = document.querySelector("#proyectos-container");
 
 let proyectoActual = JSON.parse(localStorage.getItem("proyectoActual")) || { metricas: [] };
 
@@ -20,28 +19,13 @@ metricaForm.addEventListener("submit", (event) => {
         localStorage.setItem("proyectoActual", JSON.stringify(proyectoActual));
         div.innerHTML = "<p>Métrica creada correctamente.</p>";
 
-        window.location.href = "index.html";
+        // Redirige a la página verMetricas.html para mostrar las métricas actualizadas
+        window.location.href = `verMetricas.html?Titulo=${encodeURIComponent(proyectoActual.titulo)}&Proyecto=${encodeURIComponent(JSON.stringify(proyectoActual))}`;
     } else {
         div.innerHTML = "<p>Por favor, ingrese valores válidos para las métricas.</p>";
     }
 });
 
-
 botonRegresar.addEventListener("click", function() {
     window.location.href = "index.html";
-});
-
-proyectosContainer.addEventListener("click", (event) => {
-    const target = event.target;
-    if (target.classList.contains("eliminar-metrica")) {
-        const metricaIndex = parseInt(target.dataset.index);
-        const metricaAEliminar = proyectoActual.metricas[metricaIndex];
-        const resultado = eliminarMetricaDeProyecto(metricaAEliminar, proyectoActual);
-        if (resultado === "Se eliminó la métrica del proyecto con éxito") {
-            localStorage.setItem("proyectoActual", JSON.stringify(proyectoActual));
-            mostrarMetricasProyecto(proyectoActual);
-        } else {
-            div.innerHTML = `<p>${resultado}</p>`;
-        }
-    }
 });

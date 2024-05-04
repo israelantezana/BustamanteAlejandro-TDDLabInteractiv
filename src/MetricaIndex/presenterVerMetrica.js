@@ -1,16 +1,28 @@
 import { mostrarMetricasProyecto } from "./moduloMetrica.js";
 
 document.addEventListener("DOMContentLoaded", () => {
+    // Obtener el contenedor de métricas
+    const metricasContainer = document.getElementById("metricas-container");
+
+    // Obtener el título y el objeto de proyecto de la URL
     const parametros = new URLSearchParams(window.location.search);
     const tituloProyecto = parametros.get("Titulo");
+    const proyectoCodificado = parametros.get("Proyecto");
 
-    const proyectos = JSON.parse(localStorage.getItem("proyectos")) || [];
-    const proyecto = proyectos.find(proyecto => proyecto.titulo === tituloProyecto);
+    // Decodificar el objeto de proyecto
+    const proyecto = JSON.parse(decodeURIComponent(proyectoCodificado));
 
-    if (proyecto) {
-        mostrarMetricasProyecto(proyecto);
-    } else {
-        const errorDiv = document.querySelector("#error-div");
-        errorDiv.textContent = "El proyecto no fue encontrado.";
-    }
+    // Mostrar el título del proyecto
+    const tituloProyectoElement = document.createElement("h2");
+    tituloProyectoElement.textContent = `Título del Proyecto: ${tituloProyecto}`;
+    metricasContainer.appendChild(tituloProyectoElement);
+
+    // Mostrar las métricas del proyecto utilizando la función mostrarMetricasProyecto
+    mostrarMetricasProyecto(proyecto);
+    
+    // Agregar evento de clic al botón de regresar
+    const botonRegresar = document.querySelector("#boton-regresar");
+    botonRegresar.addEventListener("click", function() {
+        window.location.href = "index.html";
+    });
 });
